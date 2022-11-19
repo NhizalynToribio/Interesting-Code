@@ -65,5 +65,7 @@ def main():
     for i in range(Number_Passwords):
         print("\nThis is the Generated Password #" + str(i + 1) + " = " + Password[i])
 
+# This is the reference used in making this Code: https://github.com/abhishek305/Password-Generator-in-python/blob/master/Password%20Generator.py
+
 
 main()
