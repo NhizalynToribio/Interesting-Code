@@ -15,12 +15,19 @@ def Generate_Password(pwlength):
     for i in pwlength:
         password = ""
         for j in range(i):
-            next_letter_index = random.randrange(len(alphabet))
-            password = password + alphabet[next_letter_index]
+            letterindex = random.randrange(len(alphabet))
+            password = password + alphabet[letterindex]
 
-        password = replaceWithNumber(password)
+        password = ExchangeNumber(password)
         password = replaceWithUppercaseLetter(password)
 
         passwords.append(password)
 
     return passwords
+
+
+def ExchangeNumber(pword):
+    for i in range(random.randrange(1,3)):
+        replace_index = random.randrange(len(pword)//2)
+        pword = pword[0:replace_index] + str(random.randrange(10)) + pword[replace_index+1:]
+        return pword
