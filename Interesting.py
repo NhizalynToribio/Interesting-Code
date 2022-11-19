@@ -1,4 +1,10 @@
-print("**************** PROGRAMMED BY: *****************")
-print("************** NHIZALYN TORIBIO ****************")
-print("***************** BSCOE 2 -2 *******************")
-print("******** SEATWORK (EXCITING WEBSITE) ***********")
+from tkinter import *
+from tkinter.ttk import *
+
+from time import strftime
+
+root = Tk()
+root.title("Clock")
+
+def time():
+    string = strftime('%H:%M:%S %p')
