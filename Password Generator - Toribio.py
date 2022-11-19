@@ -41,3 +41,13 @@ def ExchangeUppercaseLetter(pword):
         pword = pword[0:replace_index] + pword[replace_index].upper() + pword[replace_index+1:]
         return pword
 
+
+def main():
+
+    Number_Passwords = int(input("\nHow many passwords do you want to generate? "))
+
+    print("Generating " + str(Number_Passwords) + " passwords")
+
+    passwordLengths = []
+
+    print("The Minimum length of password should be 3")
