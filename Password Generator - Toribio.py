@@ -42,6 +42,7 @@ def ExchangeUppercaseLetter(pword):
         return pword
 
 
+# This section will ask the user to input how many password he/she wants
 def main():
 
     Number_Passwords = int(input("\nHow many passwords do you want to generate? "))
@@ -50,4 +51,19 @@ def main():
 
     passwordLengths = []
 
-    print("The Minimum length of password should be 3")
+    print("\nThe Minimum length of password should be 3")
+
+    # This section will show the output of the program or the Generated Password
+    for i in range(Number_Passwords):
+        length = int(input("\nEnter the length of the Password #" + str(i + 1) + " "))
+        if length < 3:
+            length = 3
+        passwordLengths.append(length)
+
+    Password = Generate_Password(passwordLengths)
+
+    for i in range(Number_Passwords):
+        print("\nThis is the Generated Password #" + str(i + 1) + " = " + Password[i])
+
+
+main()
