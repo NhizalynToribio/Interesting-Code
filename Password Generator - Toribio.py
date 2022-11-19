@@ -19,15 +19,25 @@ def Generate_Password(pwlength):
             password = password + alphabet[letterindex]
 
         password = ExchangeNumber(password)
-        password = replaceWithUppercaseLetter(password)
+        password = ExchangeUppercaseLetter(password)
 
         passwords.append(password)
 
     return passwords
 
 
+# This section replace the word with numbers
 def ExchangeNumber(pword):
-    for i in range(random.randrange(1,3)):
+    for i in range(random.randrange(1, 3)):
         replace_index = random.randrange(len(pword)//2)
         pword = pword[0:replace_index] + str(random.randrange(10)) + pword[replace_index+1:]
         return pword
+
+
+# This section replace a element with an Uppercase Letter
+def ExchangeUppercaseLetter(pword):
+    for i in range(random.randrange(1, 3)):
+        replace_index = random.randrange(len(pword)//2, len(pword))
+        pword = pword[0:replace_index] + pword[replace_index].upper() + pword[replace_index+1:]
+        return pword
+
